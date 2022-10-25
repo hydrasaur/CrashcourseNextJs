@@ -14,6 +14,11 @@ const Nav = () => {
         <li>
           <Link href="/something">Something</Link>
         </li>
+        <li>
+          <Link href="https://github.com/hydrasaur/CrashcourseNextJs">
+            Source
+          </Link>
+        </li>
       </ul>
     </nav>
   );
