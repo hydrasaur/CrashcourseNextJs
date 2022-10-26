@@ -1,13 +1,13 @@
 import headerstyles from "../styles/Header.module.css";
 
-const Header = () => {
+const Header = ({ title, description }) => {
   return (
     <div>
       <h1 className={headerstyles.title}>
-        <span>WebDev</span> News
+        <span>{title}</span>
       </h1>
       <p className={headerstyles.description}>
-        Keep up to date with the latest web dev news
+        <span>{description}</span>
       </p>
     </div>
   );

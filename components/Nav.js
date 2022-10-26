@@ -19,6 +19,9 @@ const Nav = () => {
             Source
           </Link>
         </li>
+        <li>
+          <Link href="/champions">league</Link>
+        </li>
       </ul>
     </nav>
   );

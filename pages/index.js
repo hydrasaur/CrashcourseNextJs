@@ -1,3 +1,4 @@
+import Header from "../components/Header";
 import { server } from "../config";
 import ArticleList from "../components/ArticleList";
 
@@ -5,6 +6,7 @@ export default function Home({ articles }) {
   console.log(articles);
   return (
     <div>
+      <Header title="Home" description="this is the home page" />
       <ArticleList articles={articles} />
     </div>
   );
