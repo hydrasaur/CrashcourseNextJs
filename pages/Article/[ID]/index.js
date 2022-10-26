@@ -1,14 +1,15 @@
-import { server } from "../config";
+import { server } from "../../../config";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Meta from "../../../components/Meta";
 
-const Article = ({ article }) => {
-  // const router = useRouter();
-  // const { id } = router.query;
-  // ftech data function
+const article = ({ article }) => {
+  // const router = useRouter()
+  // const { id } = router.query
 
   return (
     <>
+      <Meta title={article.title} description={article.excerpt} />
       <h1>{article.title}</h1>
       <p>{article.body}</p>
       <br />
@@ -17,16 +18,11 @@ const Article = ({ article }) => {
   );
 };
 
-export default Article;
-
 export const getStaticProps = async (context) => {
-  const res = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${context.params.id}`
-  );
+  console.log(server);
+  const res = await fetch(`${server}/api/articles/${context.params.id}`);
 
   const article = await res.json();
-
-  console.log("From ServerSide", article);
 
   return {
     props: {
@@ -49,16 +45,32 @@ export const getStaticPaths = async () => {
   };
 };
 
-//export const getStaticPaths = async () => {
-//const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+// export const getStaticProps = async (context) => {
+//   const res = await fetch(
+//     `https://jsonplaceholder.typicode.com/posts/${context.params.id}`
+//   )
 
-// const articles = await res.json();
+//   const article = await res.json()
 
-//const ids = articles.map((article) => article.id);
-//const paths = ids.map((id) => ({ params: { id: id.toString() } }));
+//   return {
+//     props: {
+//       article,
+//     },
+//   }
+// }
 
-//return {
-//paths,
-//fallback: false,
-// };
-//};
+// export const getStaticPaths = async () => {
+//   const res = await fetch(`https://jsonplaceholder.typicode.com/posts`)
+
+//   const articles = await res.json()
+
+//   const ids = articles.map((article) => article.id)
+//   const paths = ids.map((id) => ({ params: { id: id.toString() } }))
+
+//   return {
+//     paths,
+//     fallback: false,
+//   }
+// }
+
+export default article;
