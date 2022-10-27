@@ -1,11 +1,23 @@
+.grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+
+  }
+
 .card {
-    border: 1px solid #eaeaea;
     margin: 2rem;
+    padding: 1.5rem;
     text-align: center;
+    color: inherit;
     text-decoration: wavy;
+    border: 1px solid #eaeaea;
     border-radius: 20px;
     transition: color 1.30s ease, border-color 1.30s ease;
     max-width: 200px;
+   
 }
 
 .card:hover,
@@ -28,19 +40,22 @@
   }
 }
 
-.grid {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 800px;
-     
-  }
-
   .para {
     white-space: nowrap; 
     overflow: hidden;
     text-overflow: ellipsis;
     height: 50px
     
+  }
+  
+  .favoriteCard {
+    margin: 2rem;
+    padding: 1,5rem;
+    text-align: unset;
+    color: inherit;
+    text-decoration: wavy;
+    border: 1px solid;
+    border-radius: 20px;
+    transition: color 1,30s ease;
+    max-width: 500px;
   }

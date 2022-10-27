@@ -1,16 +1,17 @@
 import { server } from "../config";
 import Header from "../components/Header";
 import ChampionsList from "../components/ChampionsList";
+import FavortieList from "../components/FavortieList";
 
 export const Champions = ({ champions }) => {
-  console.log(champions.data);
+  // console.log(champions.data);
   return (
     <div>
       <Header
         title="champion list"
         description="this is a list of the playable champions in LoL"
       />
-
+      <FavortieList champions={champions} />
       <ChampionsList champions={champions} />
     </div>
   );
