@@ -1,7 +1,7 @@
 import { server } from "../config";
 import Header from "../components/Header";
 import ChampionsList from "../components/ChampionsList";
-import FavortieList from "../components/FavortieList";
+import FavoriteList from "../components/FavoriteList";
 
 export const Champions = ({ champions }) => {
   // console.log(champions.data);
@@ -11,7 +11,7 @@ export const Champions = ({ champions }) => {
         title="champion list"
         description="this is a list of the playable champions in LoL"
       />
-      <FavortieList champions={champions} />
+      <FavoriteList champions={champions} />
       <ChampionsList champions={champions} />
     </div>
   );
