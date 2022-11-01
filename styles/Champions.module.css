@@ -51,12 +51,14 @@
   .favCard {
     display: flex;
     margin: 2rem;
-    padding: 10px;
+    padding: 20px;
     border: 1px solid;
-    border-color: blueviolet;
+    border-radius: 20px;
+    border-color:  red;
     flex-direction: row;
+    transition: color 1s ease, border-color 1s ease;
     width: 1600px
-  }
+    }
   
   .favoriteCard {
     margin: 2rem;
@@ -71,9 +73,9 @@
     flex-direction: row;
   }
 
-  .favoriteCard:hover,
-  .favoriteCard:focus,
-  .favoriteCard:active {
+  .favCard:hover,
+  .favCard:focus,
+  .favCard:active {
     color: purple;
     border-color: blueviolet;
   }
@@ -121,7 +123,8 @@
       padding: 100px;
       
     }
-
+    
     .h4 {
-      text-align: left;
+      text-align: right;
+      
     }

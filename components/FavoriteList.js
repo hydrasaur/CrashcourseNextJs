@@ -1,9 +1,4 @@
 import Image from "next/image";
-// import Syndra from "../assets/syndra.jpg";
-// import Ahri from "../assets/ahri.jpeg";
-// import Xerath from "../assets/xerath.jpg";
-// import Velkoz from "../assets/velkoz.jpg";
-// import Anivia from "../assets/anivia.jpeg";
 import Championstyles from "../styles/Champions.module.css";
 import ChampionItem from "./ChampionItem";
 import { checkCustomRoutes } from "next/dist/lib/load-custom-routes";
@@ -21,7 +16,7 @@ const FavoriteList = ({ champions }) => {
   return (
     <div>
       {favoriteList.map((champion, index) => {
-        console.log(champion[1]);
+        console.log(champion[1].tags);
         return (
           <div key={index} className={Championstyles.favCard}>
             <Image
@@ -29,13 +24,20 @@ const FavoriteList = ({ champions }) => {
               alt="picture of the champion"
               width="380px"
               height="180px"
+              style={{ "border-radius": "20px" }}
             />
-            <div>
+            <div style={{ padding: "20px" }}>
               <h1>{champion[0]}</h1>
               <h2>{champion[1].title}</h2>
               <p>{champion[1].blurb}</p>
             </div>
-            <h4>{champion[1].tags}</h4>
+            {champion[1].tags.map((tag, index) => {
+              return (
+                <div style={{ padding: "5px" }}>
+                  <h4 key={index}>{tag}</h4>
+                </div>
+              );
+            })}
           </div>
         );
       })}

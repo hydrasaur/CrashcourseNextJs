@@ -11,7 +11,7 @@ export const Champions = ({ champions }) => {
         title="champion list"
         description="this is a list of the playable champions in LoL"
       />
-      <FavoriteList champions={champions} />
+      {/* <FavoriteList champions={champions} /> */}
       <ChampionsList champions={champions} />
     </div>
   );

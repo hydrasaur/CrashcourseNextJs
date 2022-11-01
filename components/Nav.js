@@ -22,6 +22,9 @@ const Nav = () => {
         <li>
           <Link href="/champions">league</Link>
         </li>
+        <li>
+          <Link href="https://loldle.net/">test your nolig</Link>
+        </li>
       </ul>
     </nav>
   );
